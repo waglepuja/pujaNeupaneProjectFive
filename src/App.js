@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import firebase from './firebase';
-// import Header from './Header';
+import Header from './Header';
+// import Main from './Main';
 
 class App extends Component {
 
@@ -53,21 +54,38 @@ class App extends Component {
 
       const newState = {};
       for (let key in response) {
-        newState[key] = Object.values(response[key])
+        // console.log(response,key);
+        newState[key] = Object.values({id: key,name:response[key]})
+
       }
+      console.log(newState);
       this.setState(newState);
     }); 
   }
+
+  removeListItem =(item)=>{
+    const dbRef=firebase.database().ref("grocery");
+    console.log("item", item)
+    dbRef.child(item).remove();
+    
+  }
   
-
-
   render(){
+    // const list= this.state[this.state.listType][1];
+
+    let list ={};
+    if(this.state[this.state.listType][1] !== undefined){
+      list=this.state[this.state.listType][1];
+    }
+    
     return (
       <div className="App">
+         <Header/>
+         {/* <Main/> */}
         <header className="App-header">
           <h1>Grocery Time!</h1>
-          <h2>Can't remember where you left your grocery list?</h2>
-          <h3>No problem, we do</h3>
+          <h2>Can't find your grocery list?</h2>
+          <h3>we can help</h3>
         </header>
         <main class="mainContent">
         <h3>Pick your department</h3>
@@ -86,8 +104,13 @@ class App extends Component {
               {this.state.listType}
             </p>
             <ul>
-              {this.state[this.state.listType].map(item =>{
-                return <li>{item}</li>
+              
+              {Object.keys(list).map(id =>{
+                console.log(list[id]);
+                return(
+                  <li id={id} onClick={()=>this.removeListItem(id) }>{list[id]}</li>                  
+                ) 
+                
               })}
             </ul>
           </div>
