@@ -45,6 +45,7 @@ class App extends Component {
     dbRef.push(this.state.userValue);
     this.setState({userValue: ""});
   }
+  
 
   componentDidMount(){
     const dbRef = firebase.database().ref();
@@ -65,9 +66,8 @@ class App extends Component {
 
   removeListItem =(item)=>{
     const dbRef=firebase.database().ref("grocery");
-    console.log("item", item)
-    dbRef.child(item).remove();
-    
+    console.log("item", item);
+    dbRef.child(item).remove();    
   }
   
   render(){
@@ -85,18 +85,22 @@ class App extends Component {
         <header className="App-header">
           <h1>Grocery Time!</h1>
           <h2>Can't find your grocery list?</h2>
-          <h3>we can help</h3>
+          <h3>no problem,we can help</h3>
         </header>
-        <main class="mainContent">
-        <h3>Pick your department</h3>
+        <main className="mainContent">        
         <form onSubmit={this.handleSubmit}>
-        <label for="genre" class="visuallyHidden">Please Select</label>
+        
+        <div className="dropdown">
+        <h3>Pick your department</h3>
+        <label htmlFor="genre" className="visuallyHidden">Please Select</label>
           <select onChange={this.handleSelect}>        
             <option value="grocery">Grocery</option>
             <option value="household">Household</option>
             <option value="pets">Pets</option>
             <option value="miscellaneous">Miscellaneous</option>
           </select>
+          </div>
+
           <input onChange={this.handleInputChange} type="text" value={this.state.userValue}/>
           </form>
           <div>
@@ -108,7 +112,7 @@ class App extends Component {
               {Object.keys(list).map(id =>{
                 console.log(list[id]);
                 return(
-                  <li id={id} onClick={()=>this.removeListItem(id) }>{list[id]}</li>                  
+                  <li id={id} onClick={()=>this.removeListItem(id)}>{list[id]}</li>                  
                 ) 
                 
               })}
