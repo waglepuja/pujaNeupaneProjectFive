@@ -32,96 +32,90 @@
   }
 }
 
-html{
+html {
   font-size: 125%;
 }
-.wrapper{
+.wrapper {
   width: 100%;
 }
 
-h1{
-  color:blueviolet;
-  text-shadow:5px 5px lightblue;
+h1 {
+  color: blueviolet;
+  text-shadow: 5px 5px lightblue;
   font-size: 4.5rem;
-  margin-top:-20%;
+  margin-top: -25%;
   text-transform: uppercase;
   border: 2px solid red;
-  font-family: 'Dancing Script', cursive;
- }
- h2,
- h3{
-   color:blueviolet;
-   font-family: 'Shadows Into Light', cursive;
-   /* margin-top:5%; */
-   border: 2px solid red;
- }
- header{
+  font-family: "Dancing Script", cursive;
+}
+h2,
+h3 {
+  color: blueviolet;
+  font-family: "Shadows Into Light", cursive;
+  margin-top: -30px;
+  border: 2px solid red;
+}
+header {
   background-image: url("https://www.winnipeggrocery.com/images/10788252_l.png");
-  background-color:hsl(66, 90%, 73%);
+  background-color: hsl(66, 90%, 73%);
   background-size: cover;
   height: 40vw;
   position: relative;
- }
- .dropdown{
-   border: 2px solid black;
-   background:lightcyan;
-   position: absolute;
-   top: 50%;
-   left: 10%;
-   padding: 150px 30px;
- }
- .dropdown h3{
-   color: black;
-   font-size: 40px;
-   margin-top: -35%;
-   
- }
- label{
-   font-size:25px;
-   margin-top: 10%;
-   color: rgb(51, 6, 124);
-   padding-right: 15px;
-   
- }
- select{
+}
+.dropdown {
+  border: 2px solid black;
+  background: lightcyan;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  padding: 150px 30px;
+}
+.dropdown h3 {
+  color: black;
+  font-size: 40px;
+  margin-top: -35%;
+}
+label {
+  font-size: 25px;
+  margin-top: 10%;
+  color: rgb(51, 6, 124);
+  padding-right: 15px;
+}
+select {
   font-size: 20px;
   padding: 15px 50px;
-  background-color:yellowgreen;
-  border:2px solid black;  
- } 
- input{
+  background-color: yellowgreen;
+  border: 2px solid black;
+}
+input {
   padding: 30px 50px;
   font-size: 20px;
-  margin-top:8%;
+  margin-top: 8%;
   border-radius: 25px;
   border: 4px solid yellowgreen;
- }
- input:hover{
-   border: 4px solid yellow;
- }
- main{
-   background-color:rgb(168, 168, 233);
- }
- ul{
-    width: 30%;
-    background-color:rgb(89, 252, 235);
-    margin: 0 auto;
-    border: 2px solid black;
- }
- li{
-   font-size: 20px;
-   color:black;
-   text-align:center; 
-   list-style-type: square;
-   /* border: 2px solid red; */
- }
+}
+input:hover {
+  border: 4px solid yellow;
+}
+main {
+  background-color: rgb(168, 168, 233);
+}
+ul {
+  width: 30%;
+  background-color: rgb(89, 252, 235);
+  margin: 0 auto;
+  border: 2px solid black;
+}
+li {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  list-style-type: square;
+  /* border: 2px solid red; */
+}
 
-
- 
-
- /* font-family: 'Dancing Script', cursive;
+/* font-family: 'Dancing Script', cursive;
 
  font-family: 'EB Garamond', serif;
 
  font-family: 'Righteous', cursive; */
-
