@@ -40,46 +40,63 @@ html {
 }
 
 h1 {
-  color: blueviolet;
-  text-shadow: 5px 5px lightblue;
-  font-size: 4.5rem;
+  color: red;
+  text-shadow: 5px 5px white;
+  font-size: 4rem;
   margin-top: -25%;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   border: 2px solid red;
   font-family: "Dancing Script", cursive;
 }
+span {
+  color: red;
+}
+.linkColor {
+  color: white;
+}
 h2,
 h3 {
-  color: blueviolet;
+  color: white;
+  text-shadow: 3px 3px cornflowerblue;
   font-family: "Shadows Into Light", cursive;
   margin-top: -30px;
   border: 2px solid red;
 }
 header {
   background-image: url("https://www.winnipeggrocery.com/images/10788252_l.png");
-  background-color: hsl(66, 90%, 73%);
+  background-color: black;
   background-size: cover;
   height: 40vw;
   position: relative;
 }
 .dropdown {
   border: 2px solid black;
-  background: lightcyan;
+  background: white;
   position: absolute;
   top: 50%;
-  left: 10%;
-  padding: 150px 30px;
+  left: 5%;
+  padding: 120px 10px;
 }
 .dropdown h3 {
   color: black;
-  font-size: 40px;
-  margin-top: -35%;
+  font-size: 2rem;
+  margin-top: -30%;
 }
 label {
   font-size: 25px;
   margin-top: 10%;
   color: rgb(51, 6, 124);
   padding-right: 15px;
+}
+h4 {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 3px 3px cornflowerblue;
+  padding-top: 30px;
+}
+.inputField {
+  background-color: lightslategrey;
+  margin-top: -4%;
 }
 select {
   font-size: 20px;
@@ -90,7 +107,7 @@ select {
 input {
   padding: 30px 50px;
   font-size: 20px;
-  margin-top: 8%;
+  margin: 5% 0%;
   border-radius: 25px;
   border: 4px solid yellowgreen;
 }
@@ -98,10 +115,18 @@ input:hover {
   border: 4px solid yellow;
 }
 main {
-  background-color: rgb(168, 168, 233);
+  background-color: lightgreen;
+}
+div p {
+  text-transform: uppercase;
+  font-size: 30px;
+  color: black;
+  text-shadow: 3px 3px cornflowerblue;
 }
 ul {
-  width: 30%;
+  width: 40%;
+  padding: 50px 20px;
+  text-align: center;
   background-color: rgb(89, 252, 235);
   margin: 0 auto;
   border: 2px solid black;
@@ -109,6 +134,7 @@ ul {
 li {
   font-size: 20px;
   color: black;
+  padding-top: 20px;
   text-align: center;
   list-style-type: square;
   /* border: 2px solid red; */

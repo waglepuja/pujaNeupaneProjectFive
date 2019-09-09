@@ -142,16 +142,21 @@ class App extends Component {
                 <option value="miscellaneous">Miscellaneous</option>
               </select>
             </div>
-
-            <input
-              onChange={this.handleInputChange}
-              type="text"
-              value={this.state.userValue}
-            />
+            <div className="inputField">
+              <h4>Add your list</h4>
+              <input
+                onChange={this.handleInputChange}
+                type="text"
+                value={this.state.userValue}
+              />
+            </div>
           </form>
           <div>
             <p>{this.state.listType}</p>
             <ul>
+              Ckeck your list<br></br>
+              Are you sure this is all you need?<br></br>
+              <span className="list">keep adding</span>
               {/* {Object.keys(list).map(id =>{
                 console.log(list[id]);
                 console.log("id",id);
@@ -171,6 +176,16 @@ class App extends Component {
                     {item.item}
                   </li>
                 );
+
+                // <SweetAlert
+                //   show={this.state.showAlertCreate}
+                //   type="info"
+                //   title="Oops! Please fill out a description and pick a time frame to proceed"
+                //   confirmButtonColor="#2D3A65"
+                //   text={this.state.showAlertText}
+                //   inputValue="Try Again"
+                //   onConfirm={() => this.setState({ showAlertCreate: false })}
+                // />;
               })}
             </ul>
           </div>
