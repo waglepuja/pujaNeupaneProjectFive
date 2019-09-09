@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import firebase from "./firebase";
 import Header from "./Header";
+import Form from "./Form";
 // import Main from './Main';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
   }
 
   handleSelect = event => {
+    console.log(event.target.value);
     this.setState({
       listType: event.target.value
     });
@@ -31,18 +33,14 @@ class App extends Component {
   };
 
   handleSubmit = event => {
-    // event.preventDefault();
-    // const newState=[];
-    // newState.push(this.state.userValue);
-    //   this.setState((prevState) => ({
-    //   listItems: [...prevState.listItems, ...newState],
-    //   userValue:"",
-    // })
-    // )
     event.preventDefault();
-    const dbRef = firebase.database().ref(this.state.listType);
-    dbRef.push(this.state.userValue);
-    this.setState({ userValue: "" });
+    if (this.state.userValue === "") {
+      alert("Oops! Please put your list here!");
+    } else {
+      const dbRef = firebase.database().ref(this.state.listType);
+      dbRef.push(this.state.userValue);
+      this.setState({ userValue: "" });
+    }
   };
 
   componentDidMount() {
@@ -58,6 +56,15 @@ class App extends Component {
 
       console.log("newState:", newState);
 
+      if (newState.grocery) {
+        this.formatToArray(newState.grocery[1], "grocery");
+      }
+      if (!newState.grocery) {
+        this.setState({
+          grocery: []
+        });
+      }
+
       if (newState.household) {
         this.formatToArray(newState.household[1], "household");
       }
@@ -68,12 +75,12 @@ class App extends Component {
         });
       }
 
-      if (newState.grocery) {
-        this.formatToArray(newState.grocery[1], "grocery");
+      if (newState.miscellaneous) {
+        this.formatToArray(newState.miscellaneous[1], "miscellaneous");
       }
-      if (!newState.grocery) {
+      if (!newState.miscellaneous) {
         this.setState({
-          grocery: []
+          miscellaneous: []
         });
       }
 
@@ -86,14 +93,6 @@ class App extends Component {
         });
       }
 
-      if (newState.miscellaneous) {
-        this.formatToArray(newState.miscellaneous[1], "miscellaneous");
-      }
-      if (!newState.miscellaneous) {
-        this.setState({
-          miscellaneous: []
-        });
-      }
       // this.setState(newState);
     });
   }
@@ -112,6 +111,8 @@ class App extends Component {
     }
   };
 
+  // REMOVE ITEMS FROM THE LIST
+
   removeListItem = item => {
     const dbRef = firebase.database().ref(this.state.listType);
     console.log("item", item);
@@ -129,7 +130,13 @@ class App extends Component {
           <h3>no problem,we can help</h3>
         </header> */}
         <main className="mainContent">
-          <form onSubmit={this.handleSubmit}>
+          <Form
+            handleSelect={this.handleSelect}
+            handleSubmit={this.handleSubmit}
+            handleInputChange={this.handleInputChange}
+            handleuserValue={this.state.userValue}
+          />
+          {/* <form onSubmit={this.handleSubmit}>
             <div className="dropdown">
               <h3>Pick your department</h3>
               <label htmlFor="genre" className="visuallyHidden">
@@ -148,9 +155,10 @@ class App extends Component {
                 onChange={this.handleInputChange}
                 type="text"
                 value={this.state.userValue}
+                // onClick={this.handleSubmit}
               />
             </div>
-          </form>
+          </form> */}
           <div>
             <p>{this.state.listType}</p>
             <ul>
@@ -165,7 +173,7 @@ class App extends Component {
                 ) 
                 
               })} */}
-              {console.log(this.state[this.state.listType])}
+              {/* {console.log(this.state[this.state.listType])} */}
               {this.state[this.state.listType].map(item => {
                 return (
                   <li
@@ -190,6 +198,13 @@ class App extends Component {
             </ul>
           </div>
         </main>
+        <footer>Created & designed by Puja Neupane</footer>
+        {/* <div>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-whatsapp"></i>
+        </div> */}
       </div>
     );
   }

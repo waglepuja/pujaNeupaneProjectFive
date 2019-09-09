@@ -48,6 +48,9 @@ h1 {
   border: 2px solid red;
   font-family: "Dancing Script", cursive;
 }
+img {
+  border: 2px solid red;
+}
 span {
   color: red;
 }
@@ -63,7 +66,7 @@ h3 {
   border: 2px solid red;
 }
 header {
-  background-image: url("https://www.winnipeggrocery.com/images/10788252_l.png");
+  background-image: url("../src/assets/background-img.png");
   background-color: black;
   background-size: cover;
   height: 40vw;
@@ -79,7 +82,7 @@ header {
 }
 .dropdown h3 {
   color: black;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: -30%;
 }
 label {
@@ -139,7 +142,25 @@ li {
   list-style-type: square;
   /* border: 2px solid red; */
 }
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
 
+/* MEDIA QUERIES */
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
 /* font-family: 'Dancing Script', cursive;
 
  font-family: 'EB Garamond', serif;
