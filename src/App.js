@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   handleSelect = event => {
-    console.log(event.target.value);
     this.setState({
       listType: event.target.value
     });
@@ -47,13 +46,10 @@ class App extends Component {
     const dbRef = firebase.database().ref();
     dbRef.on("value", data => {
       const response = data.val();
-      // console.log(response);
       const newState = {};
       for (let key in response) {
         newState[key] = Object.values({ id: key, name: response[key] });
       }
-
-      console.log("newState:", newState);
 
       if (newState.grocery) {
         this.formatToArray(newState.grocery[1], "grocery");
@@ -100,7 +96,7 @@ class App extends Component {
       id: item[0],
       item: item[1]
     }));
-    console.log(data);
+
     if (data[0]) {
       this.setState({ [type]: data });
     } else {
@@ -112,7 +108,6 @@ class App extends Component {
 
   removeListItem = item => {
     const dbRef = firebase.database().ref(this.state.listType);
-    console.log("item", item);
     dbRef.child(item).remove();
   };
 
@@ -120,12 +115,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {/* <Main/> */}
-        {/* <header className="App-header">
-          <h1>Grocery Time!</h1>
-          <h2>Can't find your grocery list?</h2>
-          <h3>no problem,we can help</h3>
-        </header> */}
         <main className="mainContent">
           <Form
             handleSelect={this.handleSelect}
@@ -133,35 +122,13 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             handleuserValue={this.state.userValue}
           />
-          {/* <form onSubmit={this.handleSubmit}>
-            <div className="dropdown">
-              <h3>Pick your department</h3>
-              <label htmlFor="genre" className="visuallyHidden">
-                Please Select
-              </label>
-              <select onChange={this.handleSelect}>
-                <option value="grocery">Grocery</option>
-                <option value="household">Household</option>
-                <option value="pets">Pets</option>
-                <option value="miscellaneous">Miscellaneous</option>
-              </select>
-            </div>
-            <div className="inputField">
-              <h4>Add your list</h4>
-              <input
-                onChange={this.handleInputChange}
-                type="text"
-                value={this.state.userValue}
-                // onClick={this.handleSubmit}
-              />
-            </div>
-          </form> */}
+
           <div>
             <p>{this.state.listType}</p>
             <ul>
               Ckeck your list,<br></br>
-              Are you sure this is all you need?<br></br>
-              <span className="list">keep adding</span>
+              Are you sure this is all you need? keep adding<br></br>
+              <span className="list">Click unwanted item to remove!</span>
               {this.state[this.state.listType].map(item => {
                 return (
                   <li
@@ -172,27 +139,11 @@ class App extends Component {
                     {item.item}
                   </li>
                 );
-
-                // <SweetAlert
-                //   show={this.state.showAlertCreate}
-                //   type="info"
-                //   title="Oops! Please fill out a description and pick a time frame to proceed"
-                //   confirmButtonColor="#2D3A65"
-                //   text={this.state.showAlertText}
-                //   inputValue="Try Again"
-                //   onConfirm={() => this.setState({ showAlertCreate: false })}
-                // />;
               })}
             </ul>
           </div>
         </main>
         <footer>Created & designed by Puja Neupane</footer>
-        {/* <div>
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-whatsapp"></i>
-        </div> */}
       </div>
     );
   }

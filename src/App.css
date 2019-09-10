@@ -31,6 +31,7 @@
     transform: rotate(360deg);
   }
 }
+/* GENERAL STYLES */
 
 html {
   font-size: 125%;
@@ -38,6 +39,7 @@ html {
 .wrapper {
   width: 100%;
 }
+/* HEADER STYLES */
 
 h1 {
   color: green;
@@ -49,8 +51,8 @@ h1 {
 
 h2,
 h3 {
-  color: blueviolet;
-  /* text-shadow: 3px 3px white; */
+  color: black;
+  text-shadow: 3px 3px cornflowerblue;
   font-family: "Shadows Into Light", cursive;
   margin-top: -30px;
 }
@@ -61,6 +63,8 @@ header {
   height: 55vw;
   position: relative;
 }
+/* DROPDOWN STYLES */
+
 .dropdown {
   border: 2px solid black;
   background: lightgray;
@@ -86,8 +90,9 @@ h4 {
   text-shadow: 3px 3px cornflowerblue;
   padding-top: 30px;
 }
+/* INPUT STYLES */
 .inputField {
-  background-color: lightslategrey;
+  background-color: yellowgreen;
   margin-top: -4%;
 }
 select {
@@ -96,12 +101,15 @@ select {
   background-color: yellowgreen;
   border: 2px solid black;
 }
+option {
+  font-size: 1.2rem;
+}
 input {
   padding: 30px 50px;
   font-size: 1rem;
   margin: 5% 0%;
   border-radius: 25px;
-  border: 4px solid yellowgreen;
+  border: 4px solid black;
 }
 input:hover {
   border: 4px solid yellow;
@@ -115,6 +123,8 @@ div p {
   color: black;
   text-shadow: 3px 3px cornflowerblue;
 }
+/* LIST ITEM STYLES */
+
 ul {
   width: 40%;
   font-size: 1rem;
@@ -123,22 +133,27 @@ ul {
   background-color: rgb(89, 252, 235);
   margin: 0 auto;
   border: 2px solid black;
+  font-family: "EB Garamond", serif;
 }
 .list {
   color: red;
 }
 li {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: black;
   padding-top: 20px;
   text-align: center;
   list-style-type: square;
+  font-family: "EB Garamond", serif;
 }
+/* FOOTER STYLES */
+
 footer {
   background-color: rgb(19, 19, 143);
   color: white;
   text-align: center;
   padding: 15px;
+  font-family: "EB Garamond", serif;
 }
 
 /* MEDIA QUERIES */
@@ -146,7 +161,7 @@ footer {
 @media (max-width: 940px) {
   h1 {
     font-size: 3rem;
-    margin-top: -40%;
+    margin-top: -50%;
   }
   h2,
   h3 {
@@ -168,14 +183,18 @@ footer {
   }
   input {
     padding: 20px 10px;
-    font-size: 0.8rem;
+    /* font-size: 0.5rem; */
   }
   ul {
     width: 30%;
     padding: 15px 10px;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
   }
-  li {
+  label,
+  ul,
+  li,
+  input,
+  option {
     font-size: 0.8rem;
   }
 }
