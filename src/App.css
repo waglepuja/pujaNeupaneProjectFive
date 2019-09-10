@@ -40,45 +40,34 @@ html {
 }
 
 h1 {
-  color: red;
-  text-shadow: 5px 5px white;
+  color: green;
+  text-shadow: 5px 5px yellowgreen;
   font-size: 4rem;
-  margin-top: -25%;
-  /* text-transform: uppercase; */
-  border: 2px solid red;
+  margin-top: -35%;
   font-family: "Dancing Script", cursive;
 }
-img {
-  border: 2px solid red;
-}
-span {
-  color: red;
-}
-.linkColor {
-  color: white;
-}
+
 h2,
 h3 {
-  color: white;
-  text-shadow: 3px 3px cornflowerblue;
+  color: blueviolet;
+  /* text-shadow: 3px 3px white; */
   font-family: "Shadows Into Light", cursive;
   margin-top: -30px;
-  border: 2px solid red;
 }
 header {
   background-image: url("../src/assets/background-img.png");
-  background-color: black;
+  background-color: whitesmoke;
   background-size: cover;
-  height: 40vw;
+  height: 55vw;
   position: relative;
 }
 .dropdown {
   border: 2px solid black;
-  background: white;
+  background: lightgray;
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 5%;
-  padding: 120px 10px;
+  padding: 50px 5px;
 }
 .dropdown h3 {
   color: black;
@@ -86,9 +75,9 @@ header {
   margin-top: -30%;
 }
 label {
-  font-size: 25px;
+  font-size: 1.2rem;
   margin-top: 10%;
-  color: rgb(51, 6, 124);
+  color: black;
   padding-right: 15px;
 }
 h4 {
@@ -103,13 +92,13 @@ h4 {
 }
 select {
   font-size: 20px;
-  padding: 15px 50px;
+  padding: 5px 10px;
   background-color: yellowgreen;
   border: 2px solid black;
 }
 input {
   padding: 30px 50px;
-  font-size: 20px;
+  font-size: 1rem;
   margin: 5% 0%;
   border-radius: 25px;
   border: 4px solid yellowgreen;
@@ -122,28 +111,31 @@ main {
 }
 div p {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 2rem;
   color: black;
   text-shadow: 3px 3px cornflowerblue;
 }
 ul {
   width: 40%;
-  padding: 50px 20px;
+  font-size: 1rem;
+  padding: 30px 20px;
   text-align: center;
   background-color: rgb(89, 252, 235);
   margin: 0 auto;
   border: 2px solid black;
 }
+.list {
+  color: red;
+}
 li {
-  font-size: 20px;
+  font-size: 1rem;
   color: black;
   padding-top: 20px;
   text-align: center;
   list-style-type: square;
-  /* border: 2px solid red; */
 }
 footer {
-  background-color: black;
+  background-color: rgb(19, 19, 143);
   color: white;
   text-align: center;
   padding: 15px;
@@ -152,14 +144,67 @@ footer {
 /* MEDIA QUERIES */
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
+  h1 {
+    font-size: 3rem;
+    margin-top: -40%;
+  }
+  h2,
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .dropdown h3 {
+    font-size: 1rem;
+  }
+  .dropdown {
+    padding: 40px 3px;
+    margin: 0 auto;
+  }
+  input {
+    padding: 20px 10px;
+    font-size: 0.8rem;
+  }
+  ul {
+    width: 30%;
+    padding: 15px 10px;
+    font-size: 0.8rem;
+  }
+  li {
+    font-size: 0.8rem;
+  }
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  h1 {
+    margin-top: -60%;
+  }
+  h2,
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4,
+  div p {
+    font-size: 1.2rem;
+  }
+  input {
+    padding: 10px 3px;
+  }
+  ul {
+    width: 40%;
+    padding: 10px 5px;
+  }
+  footer {
+    padding: 10px;
+    font-size: 0.6rem;
+    padding: 10px;
+  }
 }
 /* font-family: 'Dancing Script', cursive;
 

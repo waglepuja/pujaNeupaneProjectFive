@@ -3,7 +3,7 @@ import "./App.css";
 import firebase from "./firebase";
 import Header from "./Header";
 import Form from "./Form";
-// import Main from './Main';
+// import List from "./List";
 
 class App extends Component {
   constructor() {
@@ -45,7 +45,6 @@ class App extends Component {
 
   componentDidMount() {
     const dbRef = firebase.database().ref();
-    // const sections = ["grocery", "household"];
     dbRef.on("value", data => {
       const response = data.val();
       // console.log(response);
@@ -92,8 +91,6 @@ class App extends Component {
           pets: []
         });
       }
-
-      // this.setState(newState);
     });
   }
 
@@ -162,18 +159,9 @@ class App extends Component {
           <div>
             <p>{this.state.listType}</p>
             <ul>
-              Ckeck your list<br></br>
+              Ckeck your list,<br></br>
               Are you sure this is all you need?<br></br>
               <span className="list">keep adding</span>
-              {/* {Object.keys(list).map(id =>{
-                console.log(list[id]);
-                console.log("id",id);
-                return(
-                  <li key={id} id={id} onClick={()=>this.removeListItem(id)}>{list[id]}</li>                  
-                ) 
-                
-              })} */}
-              {/* {console.log(this.state[this.state.listType])} */}
               {this.state[this.state.listType].map(item => {
                 return (
                   <li

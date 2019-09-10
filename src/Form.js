@@ -4,40 +4,13 @@ import firebase from "./firebase";
 class Form extends Component {
   constructor() {
     super();
-
-    // this.state = {
-    //   listType: "",
-    //   submitValue: ""
-    // };
   }
-  //   handleSelect = event => {
-  //     const selected = event.target.value;
-  //     console.log(selected);
-  //     this.setState({
-  //       listType: selected
-  //     });
-
-  //   this.props.handleSelect(selected)
-
-  //     // this.props.handleSelect(selected);
-  //   };
 
   handleInputChange = event => {
     this.setState({
       submitValue: event.target.value
     });
   };
-
-  //   handleSubmit = event => {
-  //     event.preventDefault();
-  //     if (this.state.submitValue === "") {
-  //       alert("Oops! Please put your list here!");
-  //     } else {
-  //       const dbRef = firebase.database().ref(`/${this.state.listType}`);
-  //       dbRef.push(this.state.submitValue);
-  //       this.setState({ submitValue: "" });
-  //     }
-  //   };
 
   render() {
     return (
@@ -66,7 +39,6 @@ class Form extends Component {
               onChange={this.props.handleInputChange}
               type="text"
               value={this.props.handleuserValue}
-              // onClick={this.handleSubmit}
             />
           </div>
         </form>
