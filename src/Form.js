@@ -21,12 +21,7 @@ class Form extends Component {
             <label htmlFor="genre" className="visuallyHidden">
               Please Select
             </label>
-            <select
-              onChange={
-                //   we are sending information to the parent component as an argument
-                this.props.handleSelect
-              }
-            >
+            <select onChange={this.props.handleSelect}>
               <option value="grocery">Grocery</option>
               <option value="household">Household</option>
               <option value="pets">Pets</option>

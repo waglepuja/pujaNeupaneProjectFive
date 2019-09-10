@@ -3,7 +3,6 @@ import "./App.css";
 import firebase from "./firebase";
 import Header from "./Header";
 import Form from "./Form";
-// import List from "./List";
 
 class App extends Component {
   constructor() {
@@ -18,6 +17,7 @@ class App extends Component {
       userValue: ""
     };
   }
+  // FUNCTIONS FOR THE EVENT LISTENER
 
   handleSelect = event => {
     this.setState({
@@ -42,6 +42,8 @@ class App extends Component {
     }
   };
 
+  // COMPONENT DID MOUNT
+
   componentDidMount() {
     const dbRef = firebase.database().ref();
     dbRef.on("value", data => {
@@ -50,6 +52,8 @@ class App extends Component {
       for (let key in response) {
         newState[key] = Object.values({ id: key, name: response[key] });
       }
+
+      // REMOVING THE ITEMS AND THE LAST ITEM ON THE LIST ON EACH CATEGORY
 
       if (newState.grocery) {
         this.formatToArray(newState.grocery[1], "grocery");
@@ -90,6 +94,8 @@ class App extends Component {
     });
   }
 
+  // MAP
+
   formatToArray = (typeObject, type) => {
     const typeInfo = Object.entries(typeObject);
     const data = typeInfo.map(item => ({
@@ -110,6 +116,8 @@ class App extends Component {
     const dbRef = firebase.database().ref(this.state.listType);
     dbRef.child(item).remove();
   };
+
+  // DOM ELEMENTS
 
   render() {
     return (
